@@ -34,7 +34,11 @@ function addProducts() {
 
     // Alert user and reset form
     alert("Product added successfully!");
+    
     document.getElementById("productForm").reset();
+
+    // redirection to home page
+    window.location.href = "index.html"; 
 }
 
 // Attach event listener to form submission

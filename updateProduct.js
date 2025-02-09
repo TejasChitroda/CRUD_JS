@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       alert("Product updated successfully!");
   
-      // afete redirection to home page
+      // redirection to home page
       window.location.href = "index.html"; 
     }
   

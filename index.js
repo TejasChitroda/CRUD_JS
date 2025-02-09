@@ -19,7 +19,7 @@ function listProducts() {
     let newItem = document.createElement("div");
     newItem.innerHTML = `
             <div class="card shadow" style="width: 15rem;">
-                <img src="${item.img}" class="card-img-top" alt="Product Image">
+                <img src="${item.img}" class="card-img-top" alt="Product Image" height="200px" width = "150px">
                 <div class="card-body p-0">
                     <ul class="list-group list-group-flush">
                         <li class="list-group-item">
