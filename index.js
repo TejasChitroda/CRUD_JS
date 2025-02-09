@@ -1,6 +1,6 @@
 function listProducts() {
   let list = document.getElementById("list");
-  list.innerHTML = ""; // Clear previous items
+  list.innerHTML = ""; // Clear previous html in given id #list
 
   if (localStorage.length === 0) {
     list.innerHTML = '<h3 class="text-center">No Products Found</h3>';
@@ -11,7 +11,7 @@ function listProducts() {
   Object.keys(localStorage).forEach((productId) => {
     let item = JSON.parse(localStorage.getItem(productId));
     console.log(item);
-    // Ensure item is valid
+
     if (!item || !item.name || !item.price || !item.img) {
       return;
     }
@@ -39,7 +39,7 @@ function listProducts() {
             </div>`;
 
     list.appendChild(newItem);
-    console.log(list)
+    console.log(list);
   });
 }
 
@@ -47,9 +47,10 @@ function listProducts() {
 function deleteProduct(productId) {
   if (confirm("Are you sure you want to delete this product?")) {
     localStorage.removeItem(productId);
+
     listProducts(); // Refresh the product list
   }
 }
 
-// Run listProducts when page loads
+// Run listProducts whenever page is loads
 document.addEventListener("DOMContentLoaded", listProducts);

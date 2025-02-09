@@ -1,22 +1,17 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
+  function viewProductDetails() {
+    // getting id from URL
+    const getIdFromUrl = new URLSearchParams(window.location.search);
+    const productId = getIdFromUrl.get("id");
 
-    function viewProductDetails() {
+    // getting product details from localStorage
+    let data = localStorage.getItem(productId);
+    let productDetails = JSON.parse(data);
+    console.log(productDetails);
 
-        // getting id from URL
-        const getIdFromUrl = new URLSearchParams(window.location.search);
-        const productId = getIdFromUrl.get('id');
+    let newElement = document.createElement("div");
 
-        // Log the product ID to the console
-        console.log(productId);  // Corrected variable name
-
-        // getting product details from localStorage
-        let data = localStorage.getItem(productId);
-        let productDetails = JSON.parse(data);
-        console.log(productDetails);
-
-        let newElement = document.createElement("div");
-
-        newElement.innerHTML = `
+    newElement.innerHTML = `
         
          <div class="card rounded-2 mt-5">
             <div class="d-flex flex-column flex-md-nowrap flex-wrap ">
@@ -37,21 +32,18 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
     
         
-        `
+        `;
 
+    let displayProduct = document.getElementById("viewProduct");
 
-        // Getting display area
-        let displayProduct = document.getElementById('viewProduct');
-
-        if (!displayProduct) {
-            console.log("Error: 'viewProduct' element not found!");
-            return;
-        }
-
-        // Appending the new product details
-        displayProduct.appendChild(newElement);
+    if (!displayProduct) {
+      console.log("Error: 'viewProduct' element not found!");
+      return;
     }
 
-    viewProductDetails();
+    // Appending the new product details
+    displayProduct.appendChild(newElement);
+  }
 
+  viewProductDetails();
 });
