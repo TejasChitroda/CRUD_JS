@@ -7,6 +7,11 @@ function listProducts() {
     return;
   }
 
+  let sorting = document.getElementById('sorting')
+  sorting.addEventListener('click' , function() {
+    window.location.href = "sorting.html"
+  })
+
   // Iterate through all keys in localStorage
   Object.keys(localStorage).forEach((productId) => {
     let item = JSON.parse(localStorage.getItem(productId));

@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         </li>
                         <li class="list-group-item">₹ ${productDetails.price}</li>
                         <li class="list-group-item">${productId}</li>
-                        <li class="list-group-item">${productDetails.description}</li>
+                        <li class="list-group-item">${productDetails.desc}</li>
                     </ul>
                 </div>
             </div>

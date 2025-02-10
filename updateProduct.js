@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
       id: productId,
       name: name,
       price: price,
-      description: description,
+      desc: description,
       img: img,
     };
 
