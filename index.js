@@ -7,12 +7,6 @@ function listProducts() {
     return;
   }
 
-  let sorting = document.getElementById('sorting')
-  sorting.addEventListener('click' , function() {
-    window.location.href = "sorting.html"
-  })
-
-  // Iterate through all keys in localStorage
   Object.keys(localStorage).forEach((productId) => {
     let item = JSON.parse(localStorage.getItem(productId));
     console.log(item);
@@ -57,5 +51,9 @@ function deleteProduct(productId) {
   }
 }
 
-// Run listProducts whenever page is loads
-document.addEventListener("DOMContentLoaded", listProducts);
+document.addEventListener('load' , function () {
+  console.log("hello");
+})
+
+
+console.log("hello outer");
